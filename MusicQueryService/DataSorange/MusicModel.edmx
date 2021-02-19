@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbInfoMusicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AlbumMusical">
+          <Key>
+            <PropertyRef Name="IdAlbum" />
+          </Key>
+          <Property Name="IdAlbum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreAlbum" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="NombreArtista" Type="varchar" MaxLength="150" />
+          <Property Name="FechaInsert" Type="date" />
+        </EntityType>
+        <EntityType Name="Artista">
+          <Key>
+            <PropertyRef Name="IdArtista" />
+          </Key>
+          <Property Name="IdArtista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreArtista" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="GeneroMusical" Type="varchar" MaxLength="100" />
+          <Property Name="FechaInsert" Type="date" />
+        </EntityType>
+        <EntityType Name="GeneroMusical">
+          <Key>
+            <PropertyRef Name="IdGeneroMusical" />
+          </Key>
+          <Property Name="IdGeneroMusical" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreGeneroMusical" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="FechaInsert" Type="date" />
+        </EntityType>
+        <EntityType Name="Songs">
+          <Key>
+            <PropertyRef Name="IdSong" />
+          </Key>
+          <Property Name="IdSong" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreSong" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="NombreAlbum" Type="varchar" MaxLength="150" />
+          <Property Name="FechaInsert" Type="date" />
+        </EntityType>
+        <EntityType Name="SoundtrackArtist">
+          <Key>
+            <PropertyRef Name="IdSoundtrackArtist" />
+          </Key>
+          <Property Name="IdSoundtrackArtist" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameArtist" Type="varchar" MaxLength="150" />
+          <Property Name="Soundtrack" Type="varchar" MaxLength="150" />
+          <Property Name="FechaInsert" Type="date" />
+        </EntityType>
+        <EntityType Name="SubGeneroMusical">
+          <Key>
+            <PropertyRef Name="IdSubGeneroMusical" />
+          </Key>
+          <Property Name="IdSubGeneroMusical" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreSubGeneroMusical" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="IdGeneroMusical" Type="int" Nullable="false" />
+          <Property Name="FechaInsert" Type="date" />
+        </EntityType>
+        <EntityContainer Name="dbInfoMusicModelStoreContainer">
+          <EntitySet Name="AlbumMusical" EntityType="Self.AlbumMusical" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Artista" EntityType="Self.Artista" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GeneroMusical" EntityType="Self.GeneroMusical" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Songs" EntityType="Self.Songs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SoundtrackArtist" EntityType="Self.SoundtrackArtist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubGeneroMusical" EntityType="Self.SubGeneroMusical" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbInfoMusicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AlbumMusical">
+          <Key>
+            <PropertyRef Name="IdAlbum" />
+          </Key>
+          <Property Name="IdAlbum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreAlbum" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreArtista" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FechaInsert" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Artista">
+          <Key>
+            <PropertyRef Name="IdArtista" />
+          </Key>
+          <Property Name="IdArtista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreArtista" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GeneroMusical" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FechaInsert" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="GeneroMusical">
+          <Key>
+            <PropertyRef Name="IdGeneroMusical" />
+          </Key>
+          <Property Name="IdGeneroMusical" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreGeneroMusical" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaInsert" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Songs">
+          <Key>
+            <PropertyRef Name="IdSong" />
+          </Key>
+          <Property Name="IdSong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreSong" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreAlbum" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FechaInsert" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="SubGeneroMusical">
+          <Key>
+            <PropertyRef Name="IdSubGeneroMusical" />
+          </Key>
+          <Property Name="IdSubGeneroMusical" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreSubGeneroMusical" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdGeneroMusical" Type="Int32" Nullable="false" />
+          <Property Name="FechaInsert" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="dbInfoMusicEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AlbumMusical" EntityType="Self.AlbumMusical" />
+          <EntitySet Name="Artista" EntityType="Self.Artista" />
+          <EntitySet Name="GeneroMusical" EntityType="Self.GeneroMusical" />
+          <EntitySet Name="Songs" EntityType="Self.Songs" />
+          <EntitySet Name="SubGeneroMusical" EntityType="Self.SubGeneroMusical" />
+          <EntitySet Name="SoundtrackArtist" EntityType="dbInfoMusicModel.SoundtrackArtist" />
+        </EntityContainer>
+        <EntityType Name="SoundtrackArtist">
+          <Key>
+            <PropertyRef Name="IdSoundtrackArtist" />
+          </Key>
+          <Property Name="IdSoundtrackArtist" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameArtist" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Soundtrack" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FechaInsert" Type="DateTime" Precision="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbInfoMusicModelStoreContainer" CdmEntityContainer="dbInfoMusicEntities1">
+          <EntitySetMapping Name="AlbumMusical">
+            <EntityTypeMapping TypeName="dbInfoMusicModel.AlbumMusical">
+              <MappingFragment StoreEntitySet="AlbumMusical">
+                <ScalarProperty Name="IdAlbum" ColumnName="IdAlbum" />
+                <ScalarProperty Name="NombreAlbum" ColumnName="NombreAlbum" />
+                <ScalarProperty Name="NombreArtista" ColumnName="NombreArtista" />
+                <ScalarProperty Name="FechaInsert" ColumnName="FechaInsert" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artista">
+            <EntityTypeMapping TypeName="dbInfoMusicModel.Artista">
+              <MappingFragment StoreEntitySet="Artista">
+                <ScalarProperty Name="IdArtista" ColumnName="IdArtista" />
+                <ScalarProperty Name="NombreArtista" ColumnName="NombreArtista" />
+                <ScalarProperty Name="GeneroMusical" ColumnName="GeneroMusical" />
+                <ScalarProperty Name="FechaInsert" ColumnName="FechaInsert" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GeneroMusical">
+            <EntityTypeMapping TypeName="dbInfoMusicModel.GeneroMusical">
+              <MappingFragment StoreEntitySet="GeneroMusical">
+                <ScalarProperty Name="IdGeneroMusical" ColumnName="IdGeneroMusical" />
+                <ScalarProperty Name="NombreGeneroMusical" ColumnName="NombreGeneroMusical" />
+                <ScalarProperty Name="FechaInsert" ColumnName="FechaInsert" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Songs">
+            <EntityTypeMapping TypeName="dbInfoMusicModel.Songs">
+              <MappingFragment StoreEntitySet="Songs">
+                <ScalarProperty Name="IdSong" ColumnName="IdSong" />
+                <ScalarProperty Name="NombreSong" ColumnName="NombreSong" />
+                <ScalarProperty Name="NombreAlbum" ColumnName="NombreAlbum" />
+                <ScalarProperty Name="FechaInsert" ColumnName="FechaInsert" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubGeneroMusical">
+            <EntityTypeMapping TypeName="dbInfoMusicModel.SubGeneroMusical">
+              <MappingFragment StoreEntitySet="SubGeneroMusical">
+                <ScalarProperty Name="IdSubGeneroMusical" ColumnName="IdSubGeneroMusical" />
+                <ScalarProperty Name="NombreSubGeneroMusical" ColumnName="NombreSubGeneroMusical" />
+                <ScalarProperty Name="IdGeneroMusical" ColumnName="IdGeneroMusical" />
+                <ScalarProperty Name="FechaInsert" ColumnName="FechaInsert" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SoundtrackArtist">
+            <EntityTypeMapping TypeName="dbInfoMusicModel.SoundtrackArtist">
+              <MappingFragment StoreEntitySet="SoundtrackArtist">
+                <ScalarProperty Name="FechaInsert" ColumnName="FechaInsert" />
+                <ScalarProperty Name="Soundtrack" ColumnName="Soundtrack" />
+                <ScalarProperty Name="NameArtist" ColumnName="NameArtist" />
+                <ScalarProperty Name="IdSoundtrackArtist" ColumnName="IdSoundtrackArtist" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
